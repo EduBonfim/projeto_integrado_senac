@@ -1,0 +1,275 @@
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte usada para o corpo da página */
+    line-height: 1.5; /* Espaçamento entre as linhas de texto */
+    /*background: url('../img/Background.png') no-repeat; /* Imagem de fundo */
+    background: url('../img/BK5.jpg') no-repeat; /* Imagem de fundo */
+    background-size: cover; /* A imagem de fundo cobre toda a área disponível */
+}
+
+/* Zerando margens e aplicando box-sizing para todos os elementos e pseudo-elementos */
+* , 
+::before, 
+::after {
+    margin: 0; /* Zera as margens */
+    box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total do elemento */
+}
+
+/* Estilos do cabeçalho */
+header {
+    position: fixed; /* Cabeçalho fixo no topo */
+    top: 0; /* Fixa o cabeçalho no topo */
+    left: 0; /* Fixa o cabeçalho à esquerda */
+    width: 100%; /* Ocupa toda a largura da tela */
+    padding: 20px; /* Padding ao redor do conteúdo */
+    display: flex; /* Usando Flexbox para organizar o conteúdo */
+    justify-content: space-between; /* Espaço entre os elementos dentro do header */
+    align-items: center; /* Alinha os itens verticalmente */
+    z-index: 99; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo para imagens */
+img {
+    max-width: 100%; /* A imagem nunca será maior que 100% da largura disponível */
+    vertical-align: middle; /* Alinha a imagem verticalmente ao meio */
+}
+
+/* Estilos para títulos de seções */
+.section-title {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    backdrop-filter: blur(4px); /* Desfoque no fundo */
+    padding: 10px 20px; /* Padding reduzido */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Alinha o texto ao centro */
+    max-width: 600px; /* Limita a largura do título */
+    margin: 8px auto; /* Alinha o título centralizado com uma margem */
+}
+
+/* Estilos do título dentro da seção */
+.section-title h2 {
+    font-size: 36px; /* Tamanho da fonte para o título */
+    font-weight: bold; /* Título em negrito */
+    color: #ffffff; /* Cor do texto */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); /* Sombra suave no texto */
+}
+
+/* Estilos do parágrafo dentro da seção */
+.section-title p {
+    font-size: 16px; /* Texto um pouco menor */
+    color: #e0e0e0; /* Cor cinza claro para o texto */
+    max-width: 600px; /* Limita a largura do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo */
+    line-height: 1.5; /* Espaçamento entre as linhas */
+}
+
+/* Estilos para a seção "Sobre nós" */
+.sobre-nos {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    backdrop-filter: blur(5px); /* Desfoque de fundo */
+    padding: 80px 20px; /* Padding amplo para a seção */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Contêiner geral para limitar a largura */
+.container {
+    max-width: 1170px; /* Largura máxima do contêiner */
+    margin: auto; /* Centraliza o contêiner */
+}
+
+/* Sistema de grid para a página */
+.row {
+    display: flex; /* Usa Flexbox para criar um layout flexível */
+    flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha se necessário */
+}
+
+/* Estilos da seção de equipe */
+.member-summary {
+    font-size: 14px; /* Tamanho da fonte */
+    color: #666; /* Cor do texto (um cinza claro) */
+    margin-top: 10px; /* Espaço superior entre o cargo e o resumo */
+    line-height: 1.6; /* Espaçamento entre as linhas do resumo */
+    text-align: center; /* Alinhamento do texto no centro */
+    font-family: 'Poopins', sans-serif; /* Definindo a fonte */
+}
+
+.team-section {
+    min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura da tela */
+    padding: 90px 0; /* Padding na parte superior e inferior da seção */
+}
+
+/* Estilos para os cards dentro da seção de equipe */
+.team-section .card {
+    width: calc((100% / 2) - 30px); /* Dois cards por linha, com 30px de espaço entre eles */
+    margin: 0 15px 60px; /* Margem para os cards */
+    padding: 40px 0 0; /* Padding no topo do card */
+    position: relative; /* Necessário para posicionamento absoluto dos filhos */
+}
+
+/* Estilos para a imagem do card */
+.team-section .card-img {
+    width: 180px; /* Largura da imagem */
+    height: 180px; /* Altura da imagem */
+    margin: auto; /* Centraliza a imagem */
+    border-radius: 50%; /* Deixa a imagem redonda */
+    transition: box-shadow 0.3s ease; /* Transição suave para o efeito de sombra */
+    border: 6px solid transparent; /* Borda transparente por padrão */
+}
+
+/* Efeito de hover na imagem do card */
+.team-section .card:hover .card-img {
+    box-shadow: 0 0 15px #ffffff; /* Aplica sombra branca quando o card é hoverizado */
+}
+
+/* Garantindo que a imagem dentro do card tenha bordas arredondadas */
+.team-section .card-img img {
+    border-radius: 50%;
+}
+
+/* Estilos para a informação que aparece ao passar o mouse no card */
+.team-section .card-info {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px 15px; /* Padding interno do card de informação */
+    text-align: center; /* Alinha o texto ao centro */
+    position: absolute; /* Posicionamento absoluto dentro do card */
+    left: 0; /* Posiciona à esquerda */
+    bottom: 100%; /* Posiciona abaixo da imagem, fora do card */
+    width: 100%; /* Ocupa toda a largura do card */
+    visibility: hidden; /* Esconde o card de informação por padrão */
+    opacity: 0; /* Torna o card invisível por padrão */
+}
+
+/* Exibe o card de informação quando o card é hoverizado */
+.team-section .card:hover .card-info {
+    visibility: visible; /* Torna o card visível */
+    opacity: 1; /* Aumenta a opacidade */
+    transition: all 0.3s ease; /* Transição suave para aparecer */
+}
+
+/* Estilos para o triângulo que aparece na ponta do card de informação */
+.team-section .card-info::before {
+    content: ''; /* Cria o conteúdo do triângulo */
+    position: absolute; /* Posiciona o triângulo em relação ao card de informação */
+    left: calc(50% - 20px); /* Centraliza o triângulo horizontalmente */
+    top: 100%; /* Posiciona o triângulo abaixo do card de informação */
+    border-left: 20px solid transparent; /* Borda transparente à esquerda */
+    border-right: 20px solid transparent; /* Borda transparente à direita */
+    border-top: 20px solid #ffffff; /* Borda superior branca */
+}
+
+/* Estilos do título dentro do card de informação */
+.team-section .card-info h3 {
+    font-size: 24px; /* Tamanho do título */
+    text-transform: capitalize; /* Primeira letra de cada palavra em maiúscula */
+    color: #000000; /* Cor preta para o título */
+}
+
+/* Estilos do parágrafo dentro do card de informação */
+.team-section .card-info p {
+    font-size: 16px; /* Tamanho da fonte */
+    color: #666666; /* Cor cinza para o texto */
+    margin: 0 0 10px; /* Margem inferior */
+}
+
+/* Estilos para os ícones sociais no card de informação */
+.team-section .card-info .social-icons a {
+    display: inline-block; /* Exibe os ícones em linha */
+    margin: 3px; /* Margem entre os ícones */
+    padding: 5px; /* Padding para os ícones */
+    border-radius: 4px; /* Bordas arredondadas */
+    transition: all 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito de hover nos ícones sociais */
+.team-section .card-info .social-icons a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Aplica sombra nos ícones ao passar o mouse */
+}
+
+/* Estilos das imagens dos ícones sociais */
+.team-section .card-info .social-icons img {
+    width: 25px; /* Tamanho dos ícones */
+}
+
+/* Estilos para o logo */
+.logo {
+    font-size: 2em; /* Tamanho da fonte do logo */
+    color: white; /* Cor branca */
+    user-select: none; /* Impede a seleção do logo */
+}
+
+/* Estilos para os links de navegação */
+.navegacao a {
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+    font-size: 1.1em; /* Tamanho da fonte */
+    color: white; /* Cor branca */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: 500; /* Peso da fonte */
+    margin-left: 40px; /* Espaço à esquerda */
+}
+
+/* Estilos para o efeito de hover nos links de navegação */
+.navegacao a::after {
+    content: ''; /* Cria um pseudo-elemento após o link */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao link */
+    left: 0; /* Alinha à esquerda */
+    bottom: -6px; /* Posiciona 6px abaixo do link */
+    width: 100%; /* Ocupa a largura total do link */
+    height: 3px; /* Altura do underline */
+    background: white; /* Cor branca para o underline */
+    border-radius: 5px; /* Bordas arredondadas */
+    transform: scaleX(0); /* Inicialmente o underline está escondido */
+    transition: transform .5s; /* Transição suave para o efeito de hover */
+}
+
+/* Exibe o underline ao passar o mouse sobre o link */
+.navegacao a:hover::after {
+    transform: scaleX(1); /* Exibe o underline */
+}
+
+/* Responsividade: Ajuste para telas menores que 768px */
+@media (max-width: 768px) {
+    .navegacao a {
+        margin-left: 20px; /* Menos margem à esquerda */
+        font-size: 1em; /* Diminui o tamanho da fonte */
+    }
+}
+
+/* Responsividade: Ajuste para telas menores que 991px */
+@media (max-width: 991px) {
+    .team-section .card {
+        width: calc(50% - 30px); /* Dois cards por linha em telas menores */
+        background-color: #ffffff; /* Fundo branco */
+        padding: 0 15px; /* Padding interno */
+    }
+
+    .team-section .card-info {
+        position: relative; /* Altera o posicionamento */
+        visibility: visible; /* Torna o card de informações visível */
+        opacity: 1; /* Torna o card totalmente visível */
+        bottom: auto; /* Remove o posicionamento relativo */
+        left: auto; /* Remove o posicionamento relativo */
+    }
+
+    .team-section .card-img {
+        margin: 30px auto 10px; /* Ajusta a margem */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Aplica sombra */
+    }
+
+    .team-section .card:hover .card-img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao hoverizar */
+    }
+
+    .team-section .card-info::before {
+        content: none; /* Remove o triângulo do card de informação */
+    }
+
+    .team-section .card-info {
+        padding: 20px 0 30px; /* Ajusta o padding do card de informações */
+    }
+}
+
+/* Responsividade: Ajuste para telas menores que 574px */
+@media (max-width: 574px) {
+    .team-section .card {
+        width: calc(100% - 30px); /* Um card por linha em telas muito pequenas */
+    }
+}

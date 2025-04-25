@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Definindo a linguagem da página como português brasileiro -->
+<head>
+    <meta charset="UTF-8"> <!-- Definindo a codificação de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tornando a página responsiva, ajustando para diferentes tamanhos de tela -->
+    <title>LifeSide - Início</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo de estilo CSS, que define o layout e estilo visual da página -->
+</head>
+<body> <!-- Início do corpo da página -->
+
+    <!-- Cabeçalho com logo e navegação -->
+    <header>
+        <h2 class="logo">LifeSide</h2> <!-- Logo da página com o nome da plataforma -->
+        <nav class="navegacao"> <!-- Barra de navegação com links -->
+            <a href="index.html">Início</a> <!-- Link para a página inicial -->
+            <a href="#">Objetivo</a>  <!-- Link para a seção Objetivo (não está apontando para lugar específico) -->
+            <a href="About.html">Sobre nós</a> <!-- Link para a página Sobre nós -->
+            <button class="btnLogin-popup">Login</button> <!-- Botão que abre o formulário de login -->
+        </nav>
+    </header>
+
+    <!-- Seção de boas-vindas -->
+    <div class="texto-caixa">
+        <h1>Bem-vindo ao LifeSide!</h1> <!-- Título da seção de boas-vindas -->
+        <p>A plataforma revolucionária que veio para transformar sua rotina, melhorar seus hábitos e dar aquele empurrão definitivo para uma vida mais equilibrada e produtiva!</p><br>
+        <p>Se você está cansado de perder tempo com redes sociais, vícios e distrações, esse é o momento de assumir o controle da sua vida de uma vez por todas.</p><br>
+        <p>Aqui, cada funcionalidade foi criada para garantir que você consiga monitorar, organizar e registrar seus avanços diários, tornando sua jornada de autodesenvolvimento muito mais estruturada e motivadora.</p>
+    </div>
+    
+    <!-- Wrapper para o formulário de login/registro -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span> <!-- Ícone para fechar o formulário pop-up -->
+
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2> <!-- Título do formulário de login -->
+            <form action="#"> <!-- Formulário de login com ação que não direciona a lugar específico -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span> <!-- Ícone de email -->
+                    <input type="email" required> <!-- Campo de email -->
+                    <label>Email</label> <!-- Rótulo para o campo de email -->
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> <!-- Ícone de senha -->
+                    <input type="password" required> <!-- Campo de senha -->
+                    <label>Senha</label> <!-- Rótulo para o campo de senha -->
+                </div>
+                <div class="lembrar"> <!-- Checkbox para lembrar o usuário -->
+                    <label><input type="checkbox"> Lembrar-me</label> <!-- Checkbox para lembrar login -->
+                    <a href="#">Esqueci minha senha</a> <!-- Link para recuperação de senha -->
+                </div>
+                <button type="submit" class="btn">Login</button> <!-- Botão para enviar o formulário de login -->
+                <div class="register"> <!-- Link para mudar para a tela de registro -->
+                    <p>Não tem uma conta? <a href="#" id="register-link">Registrar</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box registro">
+            <h2>Registrar</h2> <!-- Título do formulário de registro -->
+            <form action="#"> <!-- Formulário de registro com ação que não direciona a lugar específico -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span> <!-- Ícone de usuário -->
+                    <input type="text" required> <!-- Campo de nome de usuário -->
+                    <label>Usuário</label> <!-- Rótulo para o campo de nome de usuário -->
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span> <!-- Ícone de email -->
+                    <input type="email" required> <!-- Campo de email -->
+                    <label>Email</label> <!-- Rótulo para o campo de email -->
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> <!-- Ícone de senha -->
+                    <input type="password" required> <!-- Campo de senha -->
+                    <label>Senha</label> <!-- Rótulo para o campo de senha -->
+                </div>
+                <div class="lembrar">
+                    <label><input type="checkbox"> Aceito os Termos & Condições</label> <!-- Checkbox para aceitar os termos e condições -->
+                </div>
+                <button type="submit" class="btn">Registrar</button> <!-- Botão para enviar o formulário de registro -->
+                <div class="register"> <!-- Link para mudar para a tela de login -->
+                    <p>Já possui uma conta? <a href="#" id="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script> <!-- Link para o arquivo de JavaScript que manipula a lógica de interação da página -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> <!-- Script para carregar ícones da biblioteca Ionicons -->
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> <!-- Script para carregar ícones da biblioteca Ionicons para navegadores antigos -->
+</body>
+</html>

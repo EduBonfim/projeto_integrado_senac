@@ -1,0 +1,323 @@
+/* Resetando margens, padding e definindo a fonte para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que o padding e border sejam considerados no tamanho total do elemento */
+    font-family: 'Poppins', sans-serif; /* Definindo a fonte padrão como Poppins */
+}
+
+/* Definindo o estilo para o body da página */
+body {
+    display: flex; /* Usando Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
+    /*background: url('../img/Background3.jpg') no-repeat, /* Imagem de fundo */
+                /*linear-gradient(to bottom, #976052, #f7958a); /* Gradiente de fundo */
+    background: url('../img/BK4.jpg') no-repeat, /* Imagem de fundo */
+                linear-gradient(to bottom, #976052, #f7958a); /* Gradiente de fundo */
+    background-size: 100% 100%; /* Faz a imagem de fundo cobrir toda a tela */
+}
+
+/* Estilo para o header fixo no topo da página */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    width: 100%; /* Largura total da tela */
+    padding: 20px;
+    display: flex; /* Usando Flexbox para organizar o conteúdo */
+    justify-content: space-between; /* Espaço entre logo e navegação */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    z-index: 99; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo para o logo */
+.logo {
+    font-size: 2em; /* Tamanho grande da fonte */
+    color: white; /* Cor branca */
+    user-select: none; /* Impede que o texto seja selecionado */
+}
+
+/* Estilo para o texto dentro de uma caixa com fundo transparente e efeitos visuais */
+.texto-caixa {
+    position: absolute;
+    top: 20%; /* Coloca a caixa no topo da tela */
+    left: 2%; /* Coloca a caixa a 2% da margem esquerda */
+    width: 25%;
+    color: white;
+    font-size: 20px;
+    background: transparent; /* Fundo transparente */
+    border: 2px solid rgba(255, 255, 255, .5); /* Borda semitransparente */
+    border-radius: 20px; /* Bordas arredondadas */
+    backdrop-filter: blur(25px); /* Desfoque do fundo atrás do elemento */
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5); /* Sombras para dar efeito de profundidade */
+    padding: 20px; /* Preenchimento interno */
+    border-radius: 10px; /* Bordas mais arredondadas */
+}
+
+/* Estilo para os links de navegação */
+.navegacao a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+/* Efeito de linha animada que aparece ao passar o mouse */
+.navegacao a::after {
+    content: ''; /* Cria um pseudo-elemento após o link */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0); /* Inicialmente a linha não aparece */
+    transition: transform .5s; /* Animação para a linha aparecer */
+}
+
+/* Efeito de hover para a linha se expandir */
+.navegacao a:hover::after {
+    transform: scaleX(1); /* Linha aparece quando o mouse passa sobre o link */
+}
+
+/* Estilo para o botão de login */
+.navegacao .btnLogin-popup {
+    width: 130px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s; /* Animação de transição */
+}
+
+/* Efeito de hover para o botão de login */
+.navegacao .btnLogin-popup:hover,
+.navegacao .btnLogin-popup:focus {
+    background: white; /* Fundo branco */
+    color: #162935; /* Cor de texto escura */
+    outline: 2px solid white; /* Contorno branco */
+}
+
+/* Estilo para o wrapper que envolve o conteúdo pop-up */
+.wrapper {
+    position: relative;
+    width: 90vw; /* Largura de 90% da tela */
+    max-width: 400px; /* Largura máxima de 400px */
+    left: 29%; /* Centraliza o wrapper na tela */
+    height: auto;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5); /* Borda semitransparente */
+    border-radius: 20px; /* Bordas arredondadas */
+    backdrop-filter: blur(25px); /* Desfoque de fundo */
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5); /* Sombras */
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Centraliza os itens verticalmente */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites */
+    transform: scale(0); /* Inicialmente o pop-up está invisível */
+    transition: transform .5s ease, height .2s ease; /* Transições suaves */
+}
+
+/* Classe 'active-popup' que ativa o pop-up */
+.wrapper.active-popup {
+    transform: scale(1); /* Torna o pop-up visível */
+}
+
+/* Ajusta a altura quando o pop-up está ativo */
+.wrapper .active {
+    height: 520px; /* Define a altura do pop-up */
+}
+
+/* Estilo para os formulários dentro do pop-up */
+.wrapper .form-box.login {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.registro {
+    position: absolute;
+    transform: translateX(400px); /* Inicialmente o formulário de registro está deslocado */
+    transition: transform 0.3s ease; /* Animação suave */
+}
+
+/* Quando o pop-up está ativo, o formulário de registro se move para a posição */
+.wrapper.active .form-box.registro {
+    transform: translateX(0);
+}
+
+/* Quando o pop-up está ativo, o formulário de login se move para a esquerda */
+.wrapper .form-box.login {
+    transition: transform 0.3s ease;
+}
+
+.wrapper.active .form-box.login {
+    transform: translateX(-400px); /* Move o formulário de login para fora */
+}
+
+/* Estilo para o ícone de fechar no pop-up */
+.wrapper .icon-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    background: #162935; /* Cor de fundo escura */
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    z-index: 1; /* Garante que o ícone fique acima de outros elementos */
+}
+
+/* Estilos para os inputs do formulário */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162935; /* Linha inferior */
+    margin: 30px 0;
+}
+
+/* Estilos para os labels dos inputs */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%); /* Centraliza o texto verticalmente */
+    font-size: 1em;
+    color: #162935;
+    font-weight: 500;
+    pointer-events: none; /* Impede a interação com o label */
+    transition: .5s; /* Animação de transição */
+}
+
+/* Quando o input é focado ou válido, o label sobe */
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+}
+
+/* Estilos para os inputs */
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #162935;
+    font-weight: 600;
+    padding: 0 35px 0 5px; /* Preenchimento interno */
+}
+
+/* Estilo para o ícone dentro do input */
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162935;
+    line-height: 57px;
+}
+
+/* Estilos para a parte "Lembrar-se" (Checkbox e links) */
+.Lembrar {
+    font-size: .9em;
+    color: #162935;
+    font-weight: 500;
+    margin: -15px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para o checkbox "Lembrar-se" */
+.Lembrar label input {
+    accent-color: #162935;
+    margin-right: 3px;
+}
+
+/* Estilos para o link de "Lembrar-se" */
+.Lembrar a {
+    color: #162935;
+    text-decoration: none;
+}
+
+.Lembrar a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+/* Estilos para o botão de envio do formulário */
+.btn {
+    width: 100%;
+    height: 50px;
+    background: #162935;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+/* Estilos para a parte de registro com link */
+.register {
+    font-size: .9em;
+    color: #162935;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+/* Estilos para o link de registro */
+.register p a {
+    color: #162935;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+/* Estilos para a responsividade */
+@media (max-width: 768px) {
+    .navegacao a {
+        margin-left: 20px;
+        font-size: 1em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .navegacao .btnLogin-popup {
+        width: 110px;
+        height: 35px;
+        font-size: 1em; /* Ajusta o tamanho do botão */
+    }
+
+    .wrapper {
+        width: 95vw;
+        padding: 15px; /* Ajusta o preenchimento para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .texto-caixa {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px;
+        top: 15%;
+    }
+}
