@@ -12,7 +12,7 @@ O aplicativo tem como objetivo **auxiliar na superação de vícios** como:
 - Cigarro
 - Bebida alcoólica
 - Redes sociais
--Bets ( apostas )
+- Bets ( apostas )
 
 Ao mesmo tempo, promove **hábitos saudáveis** através de sugestões de atividades físicas simples, como:
 
